@@ -2,11 +2,12 @@
 
 ## Overview
 This project will setup a BIND 9 DNS server using `docker compose`.
-While this project could be usefull in other contexts, it's primary
-purpose is to serve as a repository for Wizardlab's DNS service.
+While this project could be useful in other contexts, it's primary
+purpose is to serve as a repository for Wizardlab's automated DNS service.
 
 ## Wizardlab?
 [github.com/ashelab/wizardlab](https://github.com/ashemath/wizardlab)
+
 Wizardlab is a testing/development environment that I design for
 professional development and free entertainment. It's based around a
 multimachine Vagrant file and configuring things with Ansible.

@@ -21,16 +21,24 @@ Wizardlab-bind9 is my idea of using Docker and Python to accomplish this
 mission.
 
 ## Design
-Having a BIND server on Docker allows us to drive dns over a variety of network interfaces.
-By default, this project will override host network ports `53/udp` and `53/tcp`.
-In a isolated network context, that's probably what you want, but please use
-caution. 
+Having a BIND server on Docker allows us to drive dns over a variety of
+network interfaces. By default, this project will override host network ports
+`53/udp` and `53/tcp`. In a isolated network context, that's probably what you
+want, but please use caution.
 
-Wizardlab-bind9 is designed so that one can craft a single `domain.json`.
-When the container sstarts, `build_files.py` reads `domain.json`, parses the
-requested properities of the domain, and stages up the generated `zones.*`
-,`*.db`, and `named.conf.*` files in the `/bind/etc_bind/` and 
-`bind/etc_bind/{primary,secondary}` subdirectories.
+Wizardlab-bind9 is designed so we can craft/modify the single `domain.json`.
+Specifying the domain name, forwarders, and all the records that we'd like
+in that one file.
+
+When the container starts, `build_files.py` reads `domain.json` and 
+`options.json`, parses the requested properities of the domain, and stages up
+the generated `zones.*`, `*.db`, and `named.conf.*` files in the
+`/bind/etc_bind/` and `bind/etc_bind/{primary,secondary}` subdirectories.
+
+Next, the staged files are copied from `/bind/etc_bind/*` to `/etc/bind/`
+and the `named` service is started with the command `named -4 -g`.
+The BIND service runs in the forground, so all the debug output gets caught
+by Docker's default logging service.
 
 To summarize:
 

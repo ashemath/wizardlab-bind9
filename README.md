@@ -18,7 +18,7 @@ isolated training/development networks. Long term, I need something reliable
 that I can build on to manage DNS on private cloud provider networks.
 
 Wizardlab-bind9 is my idea of using Docker and Python to accomplish this
-missions.
+mission.
 
 ## Design
 Having a BIND server on Docker allows us to drive dns over a variety of network interfaces.

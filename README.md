@@ -12,12 +12,15 @@ Wizardlab is a testing/development environment that I design for
 professional development and free entertainment. It's based around a
 multimachine Vagrant file and configuring things with Ansible.
 
-## wizardlab-bind9: Motivation
-I have a need for DNS automation since I would like to demo settings for production,
-and I like to design configuration that can transition easily and scale in
-production.
+## Motivation
+I needed a DNS server to deliver authoritative DNS services for
+isolated training/development networks. Long term, I need something reliable
+that I can build on to manage DNS on private cloud provider networks.
 
-## wizardlab-bind9: Design
+Wizardlab-bind9 is my idea of using Docker and Python to accomplish this
+missions.
+
+## Design
 Having a BIND server on Docker allows us to drive dns over a variety of network interfaces.
 By default, this project will override host network ports `53/udp` and `53/tcp`.
 In a isolated network context, that's probably what you want, but please use
@@ -48,14 +51,16 @@ need this feature.
 
 ## Current status 
 In it's current form, it sets up a single domain effectively.
-`Domain name`, `primary` zone status,`fowarders`, acl groups, and as many resource records
-as you need can be set up in the one file.
+`Domain name`, `primary` zone status, acl groups, and as many resource records
+as you need can be set up in the one `domain.json` file.
+Server settings that contribute to `/etc/bind/named.conf.options` can be set in
+the `bind/options.json` file.
 
-
-`build_files.py` supports reading a single `domain.json` file. I am working on
-having it reconcile multiple `*.json` files, combining into one or more configured
-"zones" that can run on a single container, but I would like to focus on 
-configuration that needs just the single SOA and a few RRs for now.
+`build_files.py` supports reading the `options.json` and `domain.json` files.
+I am working on having it reconcile additional `*.json` files, combining into
+one or more configured "zones" that can run on a single container, but I 
+would like to focus on configuration that needs just the single SOA and a few
+RRs for now.
 
 ## Ideas for `build_files.py`:
 - CLI like interface with common sense prompts that writes out the

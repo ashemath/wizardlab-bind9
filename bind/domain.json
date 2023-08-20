@@ -15,7 +15,7 @@
         {
         "name": "control",
         "rr_type": "A",
-        "rr_data": "192.168.2"
+        "rr_data": "192.168.56.2"
         },
         {
         "name": "services",

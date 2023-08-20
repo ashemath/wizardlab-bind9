@@ -24,17 +24,27 @@ In a isolated network context, that's probably what you want, but please use
 caution. 
 
 Wizardlab-bind9 is designed so that one can craft a single `domain.json`.
-`build_files.py` reads `domain.json`, parses the requested properities of the domain,
-and stages up the generated `zones.*` and `*.db` files in the `bind/` and 
-`bind/{primary,secondary}` subdirectories.
+When the container sstarts, `build_files.py` reads `domain.json`, parses the
+requested properities of the domain, and stages up the generated `zones.*`
+,`*.db`, and `named.conf.*` files in the `/bind/etc_bind/` and 
+`bind/etc_bind/{primary,secondary}` subdirectories.
 
-Running `docker compose up -d` brings up a BIND DNS service fitting the parameters
-specified in `domain.json`.
+To summarize:
 
 - Edit `domain.json`
-- Run `build_files.py`
 - Run `docker compose up -d`
 - Profit.
+
+There's a bit of magic happening between `domain.json` and the 
+`build_files.py` command. The 2nd RR is overritten by a python
+call that determines the assigned IP address for the container.
+This means that the BIND server can add the appropriate "glue"
+record reflecting the IP docker assigned the container.
+
+What this means is that any IP you specify for rr_data for the 2nd
+RR in the `domain.json` file will be overwritten. This may not be
+what you like, so feel free to edit `build_file.py` if you do not
+need this feature.
 
 ## Current status 
 In it's current form, it sets up a single domain effectively.
@@ -54,12 +64,4 @@ configuration that needs just the single SOA and a few RRs for now.
 appropriate.
 - Incrementing the serial
 appropriately.
-
-
-With this project, I automate setting up dns with Ansible using Jinja2
-templating. I craft `domain.json` based on role-specific variables and host_facts. 
-I instruct the host to execute `build_files.py`, the `docker compose up -d` command.
-
-If not automating this project with with Wizardlab and Ansible, you may edit
-the files under `bind/` some other way, and run `docker compose up -d`.
 

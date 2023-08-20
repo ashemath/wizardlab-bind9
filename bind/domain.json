@@ -13,14 +13,14 @@
         "rr_data": "172.17.0.2"
         },
         {
-        "name": "services",
-        "rr_type": "CNAME",
-        "rr_data": "ns1"
-        },
-        {
         "name": "control",
         "rr_type": "A",
-        "rr_data": "192.168.56.2"
+        "rr_data": "192.168.2"
+        },
+        {
+        "name": "services",
+        "rr_type": "A",
+        "rr_data": "192.168.56.3"
         }
     ],
     "acl_id": "wizardlab",

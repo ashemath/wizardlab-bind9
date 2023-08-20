@@ -1,0 +1,34 @@
+{
+    "domain": "wizardlab.test",
+    "primary": "true",
+    "records": [
+        {
+        "name": "",
+        "rr_type": "NS",
+        "rr_data": "ns1"
+        },
+        {
+        "name": "ns1",
+        "rr_type": "A",
+        "rr_data": "172.17.0.2"
+        },
+        {
+        "name": "services",
+        "rr_type": "CNAME",
+        "rr_data": "ns1"
+        },
+        {
+        "name": "control",
+        "rr_type": "A",
+        "rr_data": "192.168.56.2"
+        }
+    ],
+    "acl_id": "wizardlab",
+    "acl_cidrs": [
+        "172.17.0.0/16",
+        "192.168.56.0/24",
+        "192.168.0.0/24"
+                            
+    ]
+}
+

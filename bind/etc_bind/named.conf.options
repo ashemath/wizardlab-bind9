@@ -1,0 +1,18 @@
+acl wizardlab {
+	172.17.0.0/16;
+	192.168.56.0/24;
+	192.168.0.0/24;
+};
+options {
+	directory "/var/cache/bind/";
+	version "not currently available.";
+	allow-query { wizardlab; };
+	allow-query-cache { wizardlab; };
+	allow-recursion { wizardlab; };
+	recursion yes;
+	forwarders {
+		8.8.8.8;
+	};
+	dnssec-validation auto;
+	listen-on-v6 { any; };
+};

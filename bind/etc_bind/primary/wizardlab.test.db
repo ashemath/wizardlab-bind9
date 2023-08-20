@@ -1,0 +1,14 @@
+$TTL 2d
+$ORIGIN wizardlab.test.
+@	IN	SOA	ns1.wizardlab.test. hostmaster.wizardlab.test (
+					2023082000 ; serial
+					12h ; refresh
+					15m ; update retry
+					3w ; expiry
+					2h ; minimum
+					)
+; ########### RRs Below #########
+          IN	NS                  	ns1                           
+ns1       IN	A                   	172.27.0.2                    
+services  IN	CNAME               	ns1                           
+control   IN	A                   	192.168.56.2                  

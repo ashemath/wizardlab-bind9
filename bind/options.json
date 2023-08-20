@@ -1,0 +1,10 @@
+{
+    "directory": "/var/cache/bind",
+    "version": "not currently available",
+    "recursion": "yes",
+    "forwarders":[
+        "8.8.8.8"
+    ],
+    "forward": "only",
+    "dnssec-validation": "auto"
+}

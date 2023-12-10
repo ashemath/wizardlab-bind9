@@ -1,0 +1,49 @@
+{
+    "domain": "56.168.192.in-addr.arpa",
+    "primary": "true",
+    "records": [
+        {
+        "name": "",
+        "rr_type": "NS",
+        "rr_data": "ns1.wizardlab.test."
+        },
+	{
+	"name": "56.168.192.in-addr.arpa.",
+	"rr_type": "NS",
+	"rr_data": ""
+	},
+        {
+        "name": "2",
+        "rr_type": "PTR",
+        "rr_data": "control.wizardlab.test."
+        },
+        {
+        "name": "3",
+        "rr_type": "PTR",
+        "rr_data": "services.wizardlab.test."
+        },
+        {
+        "name": "12",
+        "rr_type": "PTR",
+        "rr_data": "node0.wizardlab.test."
+        },
+        {
+        "name": "12",
+        "rr_type": "PTR",
+        "rr_data": "node1.wizardlab.test."
+        },
+        {
+        "name": "14",
+        "rr_type": "PTR",
+        "rr_data": "node2.wizardlab.test."
+        }
+    ],
+    "acl_id": "wizardlab",
+    "acl_cidrs": [
+        "172.16.0.0/12",
+        "192.168.56.0/24",
+        "192.168.0.0/24"
+                            
+    ]
+}
+

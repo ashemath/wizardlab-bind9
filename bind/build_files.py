@@ -8,6 +8,9 @@ from datetime import datetime
 with open("/bind/domain.json","r") as f:
     data = json.load(f)
     f.close()
+with open("/bind/56.168.192.in-addr.arpa.json","r") as f:
+    addr_arpa_data = json.load(f)
+    f.close()
 with open("/bind/options.json","r") as f:
     options = json.load(f)
     f.close()
@@ -86,9 +89,9 @@ def adjust_local(data):
         text=local.read()
         test = text.find(entry)
         local.close()
-
+    
     if (test == -1):
-        with open("etc_bind/named.conf.local", "a") as local:
+        with open("/bind/etc_bind/named.conf.local", "a") as local:
             local.write(entry)
             local.close()
     return
@@ -118,7 +121,10 @@ def write_options(data,options):
     return
 
 adjust_glue(data)
+adjust_glue(addr_arpa_data)
 write_db(data)
 write_zone(data)
+write_zone(addr_arpa_data)
 adjust_local(data)
+adjust_local(addr_arpa_data)
 write_options(data,options)

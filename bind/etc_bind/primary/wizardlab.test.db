@@ -1,7 +1,7 @@
 $TTL 2d
 $ORIGIN wizardlab.test.
 @	IN	SOA	ns1.wizardlab.test. hostmaster.wizardlab.test (
-					2023120300 ; serial
+					2023121000 ; serial
 					12h ; refresh
 					15m ; update retry
 					3w ; expiry
@@ -9,9 +9,9 @@ $ORIGIN wizardlab.test.
 					)
 ; ########### RRs Below #########
           IN	NS                  	ns1                           
-ns1       IN	A                   	172.18.0.2                    
+ns1       IN	A                   	192.168.32.2                  
 control   IN	A                   	192.168.56.2                  
 services  IN	A                   	192.168.56.3                  
-node0     IN	A                   	192.168.56.12                  
-node1     IN	A                   	192.168.56.13                  
-node2     IN	A                   	192.168.56.14                  
+node0     IN	A                   	192.168.56.12                 
+node1     IN	A                   	192.168.56.13                 
+node2     IN	A                   	192.168.56.14                 

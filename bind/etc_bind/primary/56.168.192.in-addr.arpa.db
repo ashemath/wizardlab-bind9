@@ -1,0 +1,17 @@
+$TTL 2d
+@	IN	SOA	ns1.wizardlab.test. hostmaster.wizardlab.test (
+					2023120300 ; serial
+					12h ; refresh
+					15m ; update retry
+					3w ; expiry
+					2h ; minimum
+					)
+; ########### RRs Below #########
+
+56.168.192.in-addr.arpa.	IN	NS	ns1.wizardlab.test.
+
+2	IN 	PTR	control.wizardlab.test.                
+3	IN	PTR	services.wizardlab.test.                  
+12	IN	PTR	node0.wizardlab.test.                  
+13	IN	PTR	node1.wizardlab.test.          
+14	IN 	PTR 	node2.wizardlab.test.            

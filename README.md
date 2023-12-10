@@ -58,6 +58,10 @@ what you like, so feel free to edit `build_file.py` if you do not
 need this feature.
 
 ## Current status 
+### Update 12/9/23
+I added a reverse DNS zone file.
+
+### Initial Upload
 In it's current form, it sets up a single domain effectively.
 `Domain name`, `primary` zone status, acl groups, and as many resource records
 as you need can be set up in the one `domain.json` file.

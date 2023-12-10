@@ -3,15 +3,10 @@
     "primary": "true",
     "records": [
         {
-        "name": "",
+        "name": "56.168.192.in-addr.arpa.",
         "rr_type": "NS",
         "rr_data": "ns1.wizardlab.test."
         },
-	{
-	"name": "56.168.192.in-addr.arpa.",
-	"rr_type": "NS",
-	"rr_data": ""
-	},
         {
         "name": "2",
         "rr_type": "PTR",
@@ -28,7 +23,7 @@
         "rr_data": "node0.wizardlab.test."
         },
         {
-        "name": "12",
+        "name": "13",
         "rr_type": "PTR",
         "rr_data": "node1.wizardlab.test."
         },

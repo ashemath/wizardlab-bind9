@@ -47,7 +47,7 @@ $ORIGIN """+origin+""".
     return soa
 
 def build_rr(name,rr_type,rr_data):
-    return f"{name:<10}IN\t{rr_type:20}\t{rr_data:<30}\n"
+    return f"{name:<20} IN\t{rr_type:20}\t{rr_data:<30}\n"
 
 def build_rr_db(data):
     records = data["records"]
@@ -121,8 +121,8 @@ def write_options(data,options):
     return
 
 adjust_glue(data)
-adjust_glue(addr_arpa_data)
 write_db(data)
+write_db(addr_arpa_data)
 write_zone(data)
 write_zone(addr_arpa_data)
 adjust_local(data)

@@ -21,6 +21,21 @@
         "name": "services",
         "rr_type": "A",
         "rr_data": "192.168.56.3"
+        },
+        {
+        "name": "node0",
+        "rr_type": "A",
+        "rr_data": "192.168.56.12"
+        },
+        {
+        "name": "node1",
+        "rr_type": "A",
+        "rr_data": "192.168.56.13"
+        },
+        {
+        "name": "node2",
+        "rr_type": "A",
+        "rr_data": "192.168.56.14"
         }
     ],
     "acl_id": "wizardlab",
